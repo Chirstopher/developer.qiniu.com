@@ -31,6 +31,14 @@ http://<domain>/<key>?<fop1>|<fop2>|<fop3>&attname=<file_name>  （被下载的�
 
 ```
 
+如果是私有空间资源调用attname操作，需要先将如下URL作为整个downloadUrl进行签名和base64位编码:
+
+```
+http://<domain>/<key>?<fop>&attname=<file_name>
+```
+
+如果key或file_name中出现了中文字符或其他特殊字符，则需要先将中文或特殊字符部分进行utf-8方式的URLEncode编码后才能进行签名和base64位编码操作。
+
 当收到此指令时，七牛云存储会在响应中增加一个标准HTTP字段`Content-Disposition`，格式如下：
 
 ```
