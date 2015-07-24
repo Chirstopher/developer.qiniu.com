@@ -82,7 +82,7 @@ Content-Length | 是   | 整个Multipart内容的总长度，单位：字节（B
 `<crc32>`                     |      | 上传内容的 CRC32 校验码。<br>如填入，则七牛服务器会使用此值进行内容检验。
 `<acceptContentType>`         |      | 当 HTTP 请求指定 `Accept` 头部时，七牛会返回的 `Content-Type` 头部的值。<br>该值用于兼容低版本 IE 浏览器行为。低版本 IE 浏览器在 multiform 返回 `application/json` 的时候会表现为下载，返回 `text/plain` 才会显示返回内容。
 
-注意：用户自定义变量可以有多对。  
+注意：用户自定义变量可以有多对。<br/>&emsp;&emsp;&emsp;&emsp;支持非file类型的表单上传，元素对应的name为"file"即可，若表单中同时存在 file类型和非file类型 且name均为"file"的元素, 优先使用file类型的。 
 
 ---
 
